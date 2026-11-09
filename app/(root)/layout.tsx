@@ -1,13 +1,4 @@
-
-
-/** Storefront layout: top bar, sticky header, newsletter band and footer. */
-export default function StorefrontLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      {/* <TopBar />
-      <SiteHeader /> */}
-      <main className="flex-1">{children}</main>
-      {/* <SiteFooter /> */}
-    </>
-  )
+/** Main site layout: wraps public pages with the site chrome. */
+export default function SiteLayout({ children }: { children: React.ReactNode }) {
+  return <main className="flex-1">{children}</main>
 }

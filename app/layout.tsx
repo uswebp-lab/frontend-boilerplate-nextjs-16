@@ -1,21 +1,14 @@
-import type { Metadata, Viewport } from "next"
-import { Playfair_Display, Poppins } from "next/font/google"
+import type { Metadata } from "next"
+import { Geist } from "next/font/google"
 
 import { Providers } from "@/components/providers"
 import { siteConfig } from "@/lib/config/site"
 import "./globals.css"
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+// Placeholder font until the Figma typography is extracted.
+const bodyFont = Geist({
+  variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-})
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["600", "700"],
   display: "swap",
 })
 
@@ -29,13 +22,9 @@ export const metadata: Metadata = {
   creator: siteConfig.developer.name,
 }
 
-export const viewport: Viewport = {
-  themeColor: "#0d0a06",
-}
-
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${poppins.variable} ${playfair.variable} h-full antialiased`}>
+    <html lang="en" className={`${bodyFont.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <Providers>{children}</Providers>
       </body>

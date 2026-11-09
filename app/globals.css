@@ -6,12 +6,13 @@
 
 /* ------------------------------------------------------------------
  * Design tokens → Tailwind utilities
+ * Values below are shadcn neutral placeholders. Replace them with the
+ * Cherie tokens extracted from Figma (see docs/development-guide.md §7).
  * ------------------------------------------------------------------ */
 @theme inline {
   /* Typography */
-  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-playfair), ui-serif, Georgia, serif;
-  --font-display: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-body), ui-sans-serif, system-ui, sans-serif;
 
   /* shadcn semantic colors */
   --color-background: var(--background);
@@ -46,31 +47,6 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Anacaona brand palette */
-  --color-gold: var(--brand-gold);
-  --color-gold-light: var(--brand-gold-light);
-  --color-gold-deep: var(--brand-gold-deep);
-  --color-gold-ring: var(--brand-gold-ring);
-  --color-ink: var(--brand-ink);
-  --color-ink-soft: var(--brand-ink-soft);
-  --color-ink-line: var(--brand-ink-line);
-  --color-ink-input: var(--brand-ink-input);
-  --color-ink-input-line: var(--brand-ink-input-line);
-  --color-heading: var(--brand-heading);
-  --color-on-gold: var(--brand-on-gold);
-  --color-cream: var(--brand-cream);
-  --color-sand: var(--brand-sand);
-  --color-taupe: var(--brand-taupe);
-  --color-stone: var(--brand-stone);
-  --color-parchment: var(--brand-parchment);
-  --color-linen: var(--brand-linen);
-  --color-champagne: var(--brand-champagne);
-  --color-silver: var(--brand-silver);
-  --color-placeholder: var(--brand-placeholder);
-  --color-sale: var(--brand-sale);
-  --color-walmart: var(--brand-walmart);
-  --color-aliexpress: var(--brand-aliexpress);
-
   /* Radii */
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -79,93 +55,70 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-
-  /* Motion */
-  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-ken-burns: ken-burns 18s ease-out both;
-  --animate-shimmer: shimmer 2.4s linear infinite;
 }
 
 :root {
-  /* Brand */
-  --brand-gold: #b8873e; /* primary gold: eyebrows, CTAs, links */
-  --brand-gold-light: #f1c15d; /* accent gold: icons, search, highlights */
-  --brand-gold-deep: #a9752d; /* newsletter band */
-  --brand-gold-ring: #d19e4a; /* newsletter icon ring */
-  --brand-ink: #0d0a06; /* header / dark surfaces */
-  --brand-ink-soft: #17120b;
-  --brand-ink-line: #2a2218; /* borders on dark */
-  --brand-ink-input: #17120b;
-  --brand-ink-input-line: #3a3022;
-  --brand-heading: #1b1610; /* headings + body ink on light */
-  --brand-on-gold: #1b1206; /* text on gold surfaces */
-  --brand-cream: #fbf8f2; /* soft section background */
-  --brand-sand: #eadfc9; /* warm borders */
-  --brand-taupe: #7a7165; /* secondary copy */
-  --brand-stone: #767676; /* card sub copy */
-  --brand-parchment: #e9e0cf; /* nav links on dark */
-  --brand-linen: #f1e9d8; /* hero copy */
-  --brand-champagne: #c9bda6; /* copy on dark imagery */
-  --brand-silver: #d6ccb8; /* footer copy */
-  --brand-placeholder: #757575;
-  --brand-sale: #ee1122;
-  --brand-walmart: #0071ce;
-  --brand-aliexpress: #e43225;
-
-  /* shadcn semantic mapping */
-  --background: #ffffff;
-  --foreground: var(--brand-heading);
-  --card: #ffffff;
-  --card-foreground: var(--brand-heading);
-  --popover: #ffffff;
-  --popover-foreground: var(--brand-heading);
-  --primary: var(--brand-gold);
-  --primary-foreground: #ffffff;
-  --secondary: var(--brand-cream);
-  --secondary-foreground: var(--brand-heading);
-  --muted: var(--brand-cream);
-  --muted-foreground: var(--brand-taupe);
-  --accent: var(--brand-gold-light);
-  --accent-foreground: var(--brand-on-gold);
-  --destructive: var(--brand-sale);
-  --border: #d9d9d9;
-  --input: #d9d9d9;
-  --ring: var(--brand-gold);
-  --chart-1: var(--brand-gold);
-  --chart-2: var(--brand-gold-light);
-  --chart-3: var(--brand-gold-deep);
-  --chart-4: var(--brand-taupe);
-  --chart-5: var(--brand-ink);
   --radius: 0.625rem;
-  --sidebar: var(--brand-ink);
-  --sidebar-foreground: var(--brand-parchment);
-  --sidebar-primary: var(--brand-gold-light);
-  --sidebar-primary-foreground: var(--brand-on-gold);
-  --sidebar-accent: var(--brand-ink-soft);
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: var(--brand-ink-line);
-  --sidebar-ring: var(--brand-gold-light);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
-  --background: var(--brand-ink);
-  --foreground: var(--brand-linen);
-  --card: var(--brand-ink-soft);
-  --card-foreground: var(--brand-linen);
-  --popover: var(--brand-ink-soft);
-  --popover-foreground: var(--brand-linen);
-  --primary: var(--brand-gold-light);
-  --primary-foreground: var(--brand-on-gold);
-  --secondary: var(--brand-ink-soft);
-  --secondary-foreground: var(--brand-linen);
-  --muted: var(--brand-ink-soft);
-  --muted-foreground: var(--brand-champagne);
-  --accent: var(--brand-gold);
-  --accent-foreground: #ffffff;
-  --border: var(--brand-ink-line);
-  --input: var(--brand-ink-input-line);
-  --ring: var(--brand-gold-light);
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
 }
 
 @layer base {
@@ -177,44 +130,6 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
-  }
-  ::selection {
-    @apply bg-gold-light text-on-gold;
-  }
-}
-
-@layer utilities {
-  /* Small uppercase label above section headings */
-  .eyebrow {
-    @apply text-[13px] leading-[19.5px] font-semibold tracking-[4px] text-gold uppercase;
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(-2deg);
-  }
-}
-
-@keyframes ken-burns {
-  from {
-    transform: scale(1.12);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-@keyframes shimmer {
-  from {
-    transform: translateX(-120%) skewX(-20deg);
-  }
-  to {
-    transform: translateX(220%) skewX(-20deg);
   }
 }
 
